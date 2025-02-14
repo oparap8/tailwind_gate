@@ -374,8 +374,7 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --color-primary: #1671CD;
-    --color-secondary: #00ff00;
+    --color-primary: #0c2340;
   }
 }
 @layer base {
@@ -523,8 +522,26 @@
   .collapse {
     visibility: collapse;
   }
+  .absolute {
+    position: absolute;
+  }
   .relative {
     position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .z-2 {
+    z-index: 2;
+  }
+  .mx-\[10vw\] {
+    margin-inline: 10vw;
+  }
+  .mx-\[20vw\] {
+    margin-inline: 20vw;
+  }
+  .mx-auto {
+    margin-inline: auto;
   }
   .block {
     display: block;
@@ -538,6 +555,12 @@
   .table {
     display: table;
   }
+  .w-\[100px\] {
+    width: 100px;
+  }
+  .w-\[150px\] {
+    width: 150px;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -547,9 +570,52 @@
   .resize {
     resize: both;
   }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
+  .bg-\[\#0c2340\] {
+    background-color: #0c2340;
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-\[url\(https\:\/\/www\.nd\.edu\/assets\/features\/wwyff-takeover\/images\/campus_spring_scenic-1920\.webp\)\] {
+    background-image: url(https://www.nd.edu/assets/features/wwyff-takeover/images/campus_spring_scenic-1920.webp);
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -562,12 +628,79 @@
   .text-primary {
     color: var(--color-primary);
   }
+  .text-white {
+    color: var(--color-white);
+  }
   .underline {
     text-decoration-line: underline;
+  }
+  .opacity-40 {
+    opacity: 40%;
+  }
+  .opacity-50 {
+    opacity: 50%;
+  }
+  .opacity-70 {
+    opacity: 70%;
   }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .md\:mr-0 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:mr-\[5vw\] {
+    @media (width >= 48rem) {
+      margin-right: 5vw;
+    }
+  }
+  .md\:mr-\[10vw\] {
+    @media (width >= 48rem) {
+      margin-right: 10vw;
+    }
+  }
+  .md\:ml-\[50vw\] {
+    @media (width >= 48rem) {
+      margin-left: 50vw;
+    }
+  }
+  .md\:ml-\[55vw\] {
+    @media (width >= 48rem) {
+      margin-left: 55vw;
+    }
+  }
+  .md\:ml-\[57vw\] {
+    @media (width >= 48rem) {
+      margin-left: 57vw;
+    }
+  }
+  .md\:ml-\[60vw\] {
+    @media (width >= 48rem) {
+      margin-left: 60vw;
+    }
+  }
+  .md\:ml-\[65vw\] {
+    @media (width >= 48rem) {
+      margin-left: 65vw;
+    }
+  }
+  .md\:ml-\[70vw\] {
+    @media (width >= 48rem) {
+      margin-left: 70vw;
+    }
+  }
+  .md\:ml-auto {
+    @media (width >= 48rem) {
+      margin-left: auto;
+    }
+  }
+  .md\:text-right {
+    @media (width >= 48rem) {
+      text-align: right;
+    }
   }
 }
 @keyframes spin {
@@ -620,6 +753,11 @@
   syntax: "*";
   inherits: false;
   initial-value: skewY(0);
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-border-style {
   syntax: "*";
